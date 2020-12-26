@@ -225,3 +225,16 @@
     });
 
 })(jQuery);
+
+function ShowTeam() {
+    //if div was not visible before you could also use the line below
+    //document.getElementById("delete").style.display =  "block";
+    document.getElementById("team").scrollIntoView(true);
+    return false;
+}
+function ShowAbout() {
+    //if div was not visible before you could also use the line below
+    //document.getElementById("delete").style.display =  "block";
+    document.getElementById("about").scrollIntoView(true);
+    return false;
+}
