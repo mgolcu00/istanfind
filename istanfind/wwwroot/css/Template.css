@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px 0;
 }
 
+
     #header.header-scrolled, #header.header-inner-pages {
         background: rgba(0, 0, 0, 0.8);
     }
@@ -145,6 +146,35 @@ h1, h2, h3, h4, h5, h6 {
             }
 
         #header .logo img {
+            max-height: 40px;
+        }
+
+
+#headerBlack {
+    transition: all 0.5s;
+    padding: 15px 0;
+    background: rgba(0,0,0,0.7);
+}
+
+    #headerBlack .logo {
+        font-size: 32px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+        #headerBlack .logo a {
+            color: #fff;
+        }
+
+            #headerBlack .logo a span {
+                color: #ffc451;
+            }
+
+        #headerBlack .logo img {
             max-height: 40px;
         }
 

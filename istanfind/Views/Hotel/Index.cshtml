@@ -4,11 +4,78 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="header-main">Oteller</h1>
+<hr />
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-secondary" asp-action="Create">Create New</a>
 </p>
+
+<div class="main-list">
+    <div class="row text-center">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="~/img/akin.jpeg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
+                        <p class="card-text">  @Html.DisplayFor(modelItem => item.TitleText)</p>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a> |
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+
+
+
+
+<!---->
+<!-- Page Features -->
+<!--<div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+            <img class="card-img-top" src="~/img/akin.jpeg" alt="">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+            <img class="card-img-top " src="~/img/maxresdefault.jpg" alt="">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>-->
+<!-- /.row -->
+<!--</div>
+
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -40,38 +107,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WebSiteUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdressUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataText)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TitleText)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WebSiteUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdressUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TitleText)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
-</table>
+</table>-->
