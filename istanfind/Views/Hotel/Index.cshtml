@@ -8,7 +8,7 @@
 <hr />
 
 <p>
-    <a class="btn btn-secondary" asp-action="Create">Create New</a>
+    <a class="btn btn-secondary" style="margin:16px;" asp-action="Create">Create New</a>
 </p>
 
 <div class="main-list">
@@ -18,13 +18,13 @@
         {
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="~/img/akin.jpeg" alt="">
+                    <img class="card-img-top" src="@Url.Content(item.ImageUrl)" alt="">
                     <div class="card-body">
                         <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
                         <p class="card-text">  @Html.DisplayFor(modelItem => item.TitleText)</p>
                     </div>
                     <div class="card-footer">
-                        <a asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a> |
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a> 
                     </div>
                 </div>
             </div>
@@ -70,45 +70,53 @@
 
 
 </div>-->
-<!-- /.row -->
-<!--</div>
 
+@*@model IEnumerable<istanfind.Models.Hotel>
 
+    @{
+        ViewData["Title"] = "Index";
+    }
 
+    <h1>Index</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WebSiteUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdressUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Score)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataText)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TitleText)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WebSiteUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AdressUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Score)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TitleText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
@@ -135,11 +143,14 @@
                     @Html.DisplayFor(modelItem => item.TitleText)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
-        }
-    </tbody>
-</table>-->
+    }
+        </tbody>
+    </table>*@

@@ -259,6 +259,9 @@ namespace istanfind.Data.Migrations
                     b.Property<string>("DataText")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -293,6 +296,9 @@ namespace istanfind.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DataText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -331,6 +337,9 @@ namespace istanfind.Data.Migrations
                     b.Property<string>("DataText")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -365,6 +374,9 @@ namespace istanfind.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DataText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -403,6 +415,9 @@ namespace istanfind.Data.Migrations
                     b.Property<string>("DataText")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -437,6 +452,9 @@ namespace istanfind.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DataText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

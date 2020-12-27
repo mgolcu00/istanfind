@@ -16,6 +16,7 @@ namespace istanfind.Models
         public double Score { get; set; }
         public string DataText { get; set; }
         public string TitleText { get; set; }
+        public string ImageUrl { get; set; }
 
 
 
