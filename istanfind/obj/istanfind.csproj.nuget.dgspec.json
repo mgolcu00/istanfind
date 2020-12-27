@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\istanfind.csproj": {}
+    "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind\\istanfind.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\istanfind.csproj": {
+    "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind\\istanfind.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\istanfind.csproj",
+        "projectUniqueName": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind\\istanfind.csproj",
         "projectName": "istanfind",
-        "projectPath": "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\istanfind.csproj",
-        "packagesPath": "C:\\Users\\akiny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\obj\\",
+        "projectPath": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind\\istanfind.csproj",
+        "packagesPath": "C:\\Users\\Gamze\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\akiny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gamze\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
