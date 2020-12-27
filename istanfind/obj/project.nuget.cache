@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EnZUd40Gyn2BJ/zWc7MwnbIGq/V3+JyusDEiaEr/Rgnq1JzxcN5pTvo69uiFnuVTLQkmNHC30MXOcTh7LItExw==",
+  "dgSpecHash": "l+E9Gs9oaTY1E5iHXzAcY25UJfM4XyeZw+39CpNfrTyl013wcwboNKY/iGkdYRDNd72UYDmZPNkvjP4r1wo3Ww==",
   "success": true,
   "projectFilePath": "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\istanfind.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mertg\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\mertg\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
     "C:\\Users\\mertg\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",
     "C:\\Users\\mertg\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.10\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.10.nupkg.sha512",
