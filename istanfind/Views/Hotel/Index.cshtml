@@ -20,8 +20,8 @@
                 <div class="card h-100">
                     <img class="card-img-top" src="@Url.Content(item.ImageUrl)" alt="">
                     <div class="card-body">
-                        <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
-                        <p class="card-text">  @Html.DisplayFor(modelItem => item.TitleText)</p>
+                        <h4 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h4>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.TitleText)</p>
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a> 

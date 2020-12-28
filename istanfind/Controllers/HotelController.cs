@@ -25,6 +25,7 @@ namespace istanfind.Controllers
         // GET: Hotel
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.Hotel.ToListAsync());
         }
 
@@ -42,8 +43,11 @@ namespace istanfind.Controllers
             {
                 return NotFound();
             }
+            var dynmicModel = new DynmicViewModel();
+            dynmicModel.model = hotel;
+            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == hotel.Id).ToListAsync();
 
-            return View(hotel);
+            return View(dynmicModel);
         }
 
         // GET: Hotel/Create
@@ -51,7 +55,46 @@ namespace istanfind.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddComment([Bind("Id,Text,Score,UserId,PlaceId")] Comment comment,int? pId)
+        {
+            if (ModelState.IsValid)
+            {
+                var path = Request.Body;
+                comment.UserId = "testUser";
+                comment.Score = 100;
+                comment.PlaceId = (int)pId;
+                _context.Add(comment);  
+                await _context.SaveChangesAsync();
+                return Details(pId).Result;
+            }
+            //if (ModelState.IsValid)
+            //{
+            //    //Resim ekleme
+            //    string webRootPath = _hostingEnvironment.WebRootPath;
+            //    var files = HttpContext.Request.Form.Files;
 
+
+            //    string fileName = Guid.NewGuid().ToString();
+            //    var uploads = Path.Combine(webRootPath, @"images\hotel");
+            //    var extension = Path.GetExtension(files[0].FileName);
+
+            //    using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+            //    {
+            //        files[0].CopyTo(fileStream);
+            //    }
+            //    hotel.ImageUrl = @"\images\hotel\" + fileName + extension;
+
+            //    //********
+
+
+            //    _context.Add(hotel);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+            return View(comment);
+        }
         // POST: Hotel/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -170,5 +213,11 @@ namespace istanfind.Controllers
         {
             return _context.Hotel.Any(e => e.Id == id);
         }
+    }
+    public class DynmicViewModel
+    {
+        public IEnumerable<Comment> comments { get; set; }
+        public Hotel model { get; set; }
+        public Comment comment{ get; set; }
     }
 }
