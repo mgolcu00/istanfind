@@ -57,17 +57,16 @@ namespace istanfind.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddComment([Bind("Id,Text,Score,UserId,PlaceId")] Comment comment,int? pId)
+        public async Task<IActionResult> AddComment([Bind("Id,Text,Score,UserId,PlaceId")] Comment comment, [Bind("Id")] Hotel model)
         {
             if (ModelState.IsValid)
             {
                 var path = Request.Body;
-                comment.UserId = "testUser";
-                comment.Score = 100;
-                comment.PlaceId = (int)pId;
-                _context.Add(comment);  
+                comment.UserId = User.Identity.Name != null ? User.Identity.Name : "non user";
+                comment.PlaceId = model.Id;
+                _context.Add(comment);
                 await _context.SaveChangesAsync();
-                return Details(pId).Result;
+                return RedirectToAction(nameof(Index));//Details(model.Id).Result;
             }
             //if (ModelState.IsValid)
             //{
@@ -93,7 +92,7 @@ namespace istanfind.Controllers
             //    await _context.SaveChangesAsync();
             //    return RedirectToAction(nameof(Index));
             //}
-            return View(comment);
+            return RedirectToAction(nameof(Index)); /*View(comment);*/
         }
         // POST: Hotel/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -218,6 +217,6 @@ namespace istanfind.Controllers
     {
         public IEnumerable<Comment> comments { get; set; }
         public Hotel model { get; set; }
-        public Comment comment{ get; set; }
+        public Comment comment { get; set; }
     }
 }
