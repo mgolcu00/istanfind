@@ -727,3 +727,10 @@ C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Edit.cshtml.g.cs
 C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
 C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\Razor\Views\ManageUsers\Index.cshtml.g.cs
+C:\Users\mertg\source\web_2\istanfind\istanfind\bin\Debug\netcoreapp3.1\en-US\istanfind.resources.dll
+C:\Users\mertg\source\web_2\istanfind\istanfind\bin\Debug\netcoreapp3.1\tr-TR\istanfind.resources.dll
+C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\istanfind.Resources.SharedResource.en-US.resources
+C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\istanfind.Resources.SharedResource.tr-TR.resources
+C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\istanfind.csproj.GenerateResource.cache
+C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\en-US\istanfind.resources.dll
+C:\Users\mertg\source\web_2\istanfind\istanfind\obj\Debug\netcoreapp3.1\tr-TR\istanfind.resources.dll

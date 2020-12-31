@@ -299,6 +299,14 @@
         "runtime": {
           "istanfind.dll": {}
         },
+        "resources": {
+          "en-US/istanfind.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr-TR/istanfind.resources.dll": {
+            "locale": "tr-TR"
+          }
+        },
         "compile": {
           "istanfind.dll": {}
         }
