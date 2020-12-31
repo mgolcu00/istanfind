@@ -30,4 +30,8 @@
     <Folder Include="wwwroot\images\park\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\ManageUsers\Index.cshtml" />
+  </ItemGroup>
+
 </Project>

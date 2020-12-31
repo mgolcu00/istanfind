@@ -27,22 +27,35 @@
 <ul>
     @if (SignInManager.IsSignedIn(User))
     {
-        <li >
-            <a  class="get-started-btn scrollto" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @User.Identity.Name!</a>
+        <li>
+            <a class="get-started-btn btn-dark " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @User.Identity.Name!</a>
         </li>
-        <li >
+        <li>
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="get-started-btn scrollto">Logout</button>
+                <button type="submit" class="get-started-btn btn-dark scrollto">Logout</button>
             </form>
         </li>
+
+        var currentUser = await UserManager.GetUserAsync(User);
+
+        var isAdmin = currentUser != null
+            && await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
+
+        if (isAdmin)
+        {
+            @*<ul class="nav navbar-nav navbar-right"> </ul>*@
+            <li><a  class="get-started-btn btn-dark scrollto" asp-controller="ManageUsers" asp-action="Index" >Kullaıcıları Yönet</a></li>
+
+        }
+
     }
     else
     {
         <li>
-            <a  asp-area="Identity" asp-page="/Account/Login" class="get-started-btn scrollto">Login</a>
+            <a asp-area="Identity" asp-page="/Account/Login" class="get-started-btn scrollto">Login</a>
         </li>
         <li>
-            <a  asp-area="Identity" asp-page="/Account/Register" class="get-started-btn scrollto">Register</a>
+            <a asp-area="Identity" asp-page="/Account/Register" class="get-started-btn scrollto">Register</a>
         </li>
     }
 </ul>

@@ -32,18 +32,60 @@ namespace istanfind
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
+
+
+        //---------------------------------ROLE-----------------------------------------------------------------------
+
+
+        private static async Task EnsureRolesAsync(RoleManager<IdentityRole> roleManager)
+        {
+            var alreadyExists = await roleManager.RoleExistsAsync(Constants.AdministratorRole);
+
+            if (alreadyExists) return;
+
+            await roleManager.CreateAsync(new IdentityRole(Constants.AdministratorRole));
+        }
+
+        private static async Task EnsureTestAdminAsync(UserManager<User> userManager)
+        {
+            var testAdmin = await userManager.Users
+                .Where(x => x.UserName == "admin@istanfind.com")
+                .SingleOrDefaultAsync();
+
+            if (testAdmin != null)
+            {
+                await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
+                return;
+            }
+            else
+            {
+
+            }
+
+            //testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "admin@istanfind.com", Email = "admin@istanfind.com" };
+            //await userManager.CreateAsync(testAdmin, "aA_123456");
+            //await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
+        }
+
+
+        //---------------------------------ROLE-----------------------------------------------------------------------
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+
+                EnsureRolesAsync(roleManager).Wait();
+                EnsureTestAdminAsync(userManager).Wait();
             }
             else
             {

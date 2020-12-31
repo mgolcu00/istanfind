@@ -9,6 +9,8 @@ using istanfind.Data;
 using istanfind.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace istanfind.Controllers
 {
@@ -16,11 +18,15 @@ namespace istanfind.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public HistoricalPlaceController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
+        private readonly UserManager<User> _userManager;
+
+        public HistoricalPlaceController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<User> userManager)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
+            _userManager = userManager;
         }
+
 
         // GET: HistoricalPlaces
         public async Task<IActionResult> Index()
@@ -44,11 +50,12 @@ namespace istanfind.Controllers
             }
             var dynmicModel = new DynmicViewModelH();
             dynmicModel.model = historicalPlace;
-            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == historicalPlace.Id).ToListAsync();
+            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == historicalPlace.Id && x.PlaceType == Constants.HistoricalPlaceType).ToListAsync();
             return View(dynmicModel);
         }
 
         // GET: HistoricalPlaces/Create
+        [Authorize(Roles = Constants.AdministratorRole)]
         public IActionResult Create()
         {
             return View();
@@ -59,8 +66,10 @@ namespace istanfind.Controllers
         {
             if (ModelState.IsValid)
             {
-                var path = Request.Body;
-                comment.UserId = User.Identity.Name != null ? User.Identity.Name : "non user";
+                var id = _userManager.GetUserId(User);
+                comment.UserId = id == null ? "non-user" : id;
+                comment.UserName = _context.Users.Where(x => x.Id == id).ToArray()[0].Ad;
+                comment.PlaceType = Constants.HistoricalPlaceType;
                 comment.PlaceId = model.Id;
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
@@ -102,7 +111,8 @@ namespace istanfind.Controllers
             return View(historicalPlace);
         }
 
-        // GET: HistoricalPlaces/Edit/5
+        // GET: HistoricalPlaces/Edit/5      
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -123,6 +133,7 @@ namespace istanfind.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PhoneNumber,WebSiteUrl,Adress,AdressUrl,Score,DataText,TitleText,ImageUrl")] HistoricalPlace historicalPlace)
         {
             if (id != historicalPlace.Id)
@@ -154,6 +165,7 @@ namespace istanfind.Controllers
         }
 
         // GET: HistoricalPlaces/Delete/5
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -174,6 +186,7 @@ namespace istanfind.Controllers
         // POST: HistoricalPlaces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var historicalPlace = await _context.HistoricalPlace.FindAsync(id);
