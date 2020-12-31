@@ -1,0 +1,37 @@
+﻿@model IEnumerable<istanfind.Models.Park>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1 class="header-main">Parklar</h1>
+<hr />
+
+<p>
+	<a class="btn btn-secondary" style="margin:16px;" asp-action="Create">Create New</a>
+</p>
+
+<div class="main-list">
+	<div class="row text-center">
+
+		@foreach (var item in Model)
+		{
+			<div class="col-lg-3 col-md-6 mb-4">
+				<div class="card h-100">
+					<img class="card-img-top" src="@Url.Content(item.ImageUrl)" alt="">
+					<div class="card-body">
+						<h4 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h4>
+						<p class="card-text">@Html.DisplayFor(modelItem => item.TitleText)</p>
+					</div>
+					<div class="card-footer">
+						<a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a>
+						<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+					</div>
+				</div>
+			</div>
+		}
+
+	</div>
+</div>
+
+

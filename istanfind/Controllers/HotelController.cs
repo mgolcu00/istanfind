@@ -68,30 +68,7 @@ namespace istanfind.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));//Details(model.Id).Result;
             }
-            //if (ModelState.IsValid)
-            //{
-            //    //Resim ekleme
-            //    string webRootPath = _hostingEnvironment.WebRootPath;
-            //    var files = HttpContext.Request.Form.Files;
-
-
-            //    string fileName = Guid.NewGuid().ToString();
-            //    var uploads = Path.Combine(webRootPath, @"images\hotel");
-            //    var extension = Path.GetExtension(files[0].FileName);
-
-            //    using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
-            //    {
-            //        files[0].CopyTo(fileStream);
-            //    }
-            //    hotel.ImageUrl = @"\images\hotel\" + fileName + extension;
-
-            //    //********
-
-
-            //    _context.Add(hotel);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
+      
             return RedirectToAction(nameof(Index)); /*View(comment);*/
         }
         // POST: Hotel/Create

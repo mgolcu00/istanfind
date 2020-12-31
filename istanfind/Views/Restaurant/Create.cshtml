@@ -1,0 +1,76 @@
+﻿@model istanfind.Models.Restaurant
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Restoran</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create" enctype="multipart/form-data">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Name" class="control-label"></label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="PhoneNumber" class="control-label"></label>
+				<input asp-for="PhoneNumber" class="form-control" />
+				<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="WebSiteUrl" class="control-label"></label>
+				<input asp-for="WebSiteUrl" class="form-control" />
+				<span asp-validation-for="WebSiteUrl" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Adress" class="control-label"></label>
+				<input asp-for="Adress" class="form-control" />
+				<span asp-validation-for="Adress" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AdressUrl" class="control-label"></label>
+				<input asp-for="AdressUrl" class="form-control" />
+				<span asp-validation-for="AdressUrl" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Score" class="control-label"></label>
+				<input asp-for="Score" class="form-control" />
+				<span asp-validation-for="Score" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="DataText" class="control-label"></label>
+				<textarea asp-for="DataText" class="form-control" rows="3"></textarea>
+				<span asp-validation-for="DataText" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="TitleText" class="control-label"></label>
+				<input asp-for="TitleText" class="form-control" />
+				<span asp-validation-for="TitleText" class="text-danger"></span>
+			</div>
+
+
+			<div class="form-group">
+				<label asp-for="ImageUrl" class="control-label"></label>
+				<input type="file" class="form-control" name="files" />
+				<span asp-validation-for="ImageUrl" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

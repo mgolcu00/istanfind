@@ -23,6 +23,11 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\hotel\" />
+    <Folder Include="wwwroot\images\historicalplace\" />
+    <Folder Include="wwwroot\images\funplace\" />
+    <Folder Include="wwwroot\images\shop\" />
+    <Folder Include="wwwroot\images\restaurant\" />
+    <Folder Include="wwwroot\images\park\" />
   </ItemGroup>
 
 </Project>
