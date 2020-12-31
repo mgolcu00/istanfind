@@ -100,18 +100,7 @@
         </div>
     }
     <div>
-        @if (SignInManager.IsSignedIn(User))
-        {
-            var currentUser = await UserManager.GetUserAsync(User);
-            var isAdmin = currentUser != null
-                && await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
-
-            if (isAdmin)
-            {
-                <a asp-action="Edit" asp-route-id="@Model.model.Id">Edit</a>
-            }
-
-        }
+        <a asp-action="Edit" asp-route-id="@Model.model.Id">Edit</a>
         <br />
         <a asp-action="Index">Back to List</a>
     </div>

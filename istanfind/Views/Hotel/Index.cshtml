@@ -27,20 +27,7 @@
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a>
-
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            var currentUser = await UserManager.GetUserAsync(User);
-                            var isAdmin = currentUser != null
-                                && await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
-
-                            if (isAdmin)
-                            {
-                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                            }
-
-                        }
-
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     </div>
                 </div>
             </div>

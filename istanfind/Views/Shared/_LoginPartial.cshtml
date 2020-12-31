@@ -27,8 +27,13 @@
 <ul>
     @if (SignInManager.IsSignedIn(User))
     {
+        var currentUser = await UserManager.GetUserAsync(User);
+
+        var isAdmin = currentUser != null
+            && await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
+
         <li>
-            <a class="get-started-btn btn-dark " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @User.Identity.Name!</a>
+            <a class="get-started-btn btn-dark " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @currentUser.Ad!</a>
         </li>
         <li>
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
@@ -36,15 +41,11 @@
             </form>
         </li>
 
-        var currentUser = await UserManager.GetUserAsync(User);
-
-        var isAdmin = currentUser != null
-            && await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
 
         if (isAdmin)
         {
             @*<ul class="nav navbar-nav navbar-right"> </ul>*@
-            <li><a  class="get-started-btn btn-dark scrollto" asp-controller="ManageUsers" asp-action="Index" >Kullaıcıları Yönet</a></li>
+            <li><a class="get-started-btn btn-dark scrollto" asp-controller="ManageUsers" asp-action="Index">Kullanıcıları Yönet</a></li>
 
         }
 
