@@ -1,5 +1,8 @@
-﻿@page
+﻿
+@page
 @model IndexModel
+
+
 @{
     ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
@@ -22,6 +25,27 @@
             </div>
             <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
         </form>
+    </div>
+    <div class="col-md-4">
+        <h2>Yorumlarınız</h2><hr />
+        <ul class="list-group">
+            @foreach (var item in Model.comments)
+            {
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-3">
+                            @Html.DisplayFor(modelItem => item.UserName)
+                            <br />
+                            @Html.DisplayFor(modelItem => item.Score)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </div>
+                    </div>
+
+                </li>
+            }
+        </ul>
     </div>
 </div>
 

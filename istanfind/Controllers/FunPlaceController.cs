@@ -9,6 +9,8 @@ using istanfind.Data;
 using istanfind.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace istanfind.Controllers
 {
@@ -16,11 +18,13 @@ namespace istanfind.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly UserManager<User> _userManager;
 
-        public FunPlaceController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
+        public FunPlaceController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<User> userManager)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
+            _userManager = userManager;
         }
 
         // GET: FunPlaces
@@ -45,12 +49,14 @@ namespace istanfind.Controllers
             }
             var dynmicModel = new DynmicViewModelF();
             dynmicModel.model = funPlace;
-            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == funPlace.Id).ToListAsync();
+            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == funPlace.Id && x.PlaceType==Constants.FunPlaceType).ToListAsync();
 
             return View(dynmicModel);
         }
 
+
         // GET: FunPlaces/Create
+        [Authorize(Roles = Constants.AdministratorRole)]
         public IActionResult Create()
         {
             return View();
@@ -61,8 +67,10 @@ namespace istanfind.Controllers
         {
             if (ModelState.IsValid)
             {
-                var path = Request.Body;
-                comment.UserId = User.Identity.Name != null ? User.Identity.Name : "non user";
+                var id = _userManager.GetUserId(User);
+                comment.UserId = id == null ? "non-user" : id;
+                comment.UserName = _context.Users.Where(x => x.Id == id).ToArray()[0].Ad;
+                comment.PlaceType = Constants.FunPlaceType;
                 comment.PlaceId = model.Id;
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
@@ -105,6 +113,7 @@ namespace istanfind.Controllers
         }
 
         // GET: FunPlaces/Edit/5
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -125,6 +134,7 @@ namespace istanfind.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PhoneNumber,WebSiteUrl,Adress,AdressUrl,Score,DataText,TitleText,ImageUrl")] FunPlace funPlace)
         {
             if (id != funPlace.Id)
@@ -156,6 +166,7 @@ namespace istanfind.Controllers
         }
 
         // GET: FunPlaces/Delete/5
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -176,6 +187,7 @@ namespace istanfind.Controllers
         // POST: FunPlaces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var funPlace = await _context.FunPlace.FindAsync(id);

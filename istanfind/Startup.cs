@@ -68,9 +68,9 @@ namespace istanfind
 
             }
 
-            testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "admin@istanfind.com", Email = "admin@istanfind.com" };
-            await userManager.CreateAsync(testAdmin, "aA_123456");
-            await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
+            //testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "admin@istanfind.com", Email = "admin@istanfind.com" };
+            //await userManager.CreateAsync(testAdmin, "aA_123456");
+            //await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
         }
 
 

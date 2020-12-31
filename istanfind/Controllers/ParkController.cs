@@ -9,6 +9,8 @@ using istanfind.Data;
 using istanfind.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace istanfind.Controllers
 {
@@ -16,10 +18,13 @@ namespace istanfind.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public ParkController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
+        private readonly UserManager<User> _userManager;
+
+        public ParkController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<User> userManager)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
+            _userManager = userManager;
         }
 
         // GET: Parks
@@ -44,12 +49,13 @@ namespace istanfind.Controllers
             }
             var dynmicModel = new DynmicViewModelP();
             dynmicModel.model = park;
-            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == park.Id).ToListAsync();
-            
+            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == park.Id && x.PlaceType == Constants.ParkType).ToListAsync();
+
             return View(dynmicModel);
         }
 
         // GET: Parks/Create
+        [Authorize(Roles = Constants.AdministratorRole)]
         public IActionResult Create()
         {
             return View();
@@ -60,8 +66,10 @@ namespace istanfind.Controllers
         {
             if (ModelState.IsValid)
             {
-                var path = Request.Body;
-                comment.UserId = User.Identity.Name != null ? User.Identity.Name : "non user";
+                var id = _userManager.GetUserId(User);
+                comment.UserId = id == null ? "non-user" : id;
+                comment.UserName = _context.Users.Where(x => x.Id == id).ToArray()[0].Ad;
+                comment.PlaceType = Constants.ParkType;
                 comment.PlaceId = model.Id;
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
@@ -75,6 +83,7 @@ namespace istanfind.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Create([Bind("Id,Name,PhoneNumber,WebSiteUrl,Adress,AdressUrl,Score,DataText,TitleText,ImageUrl")] Park park)
         {
             if (ModelState.IsValid)
@@ -103,7 +112,8 @@ namespace istanfind.Controllers
             return View(park);
         }
 
-        // GET: Parks/Edit/5
+        // GET: Parks/Edit/5 
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -124,6 +134,7 @@ namespace istanfind.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PhoneNumber,WebSiteUrl,Adress,AdressUrl,Score,DataText,TitleText,ImageUrl")] Park park)
         {
             if (id != park.Id)
@@ -155,6 +166,7 @@ namespace istanfind.Controllers
         }
 
         // GET: Parks/Delete/5
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -175,6 +187,7 @@ namespace istanfind.Controllers
         // POST: Parks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var park = await _context.Park.FindAsync(id);

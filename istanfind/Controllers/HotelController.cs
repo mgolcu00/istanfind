@@ -67,8 +67,10 @@ namespace istanfind.Controllers
             if (ModelState.IsValid)
             {
                 var id = _userManager.GetUserId(User);
-                comment.UserId = id == null ? "non user" : id;
-                comment.UserName = _context.Users.Where(x => x.Id == id).ToArray()[0].UserName;
+                comment.UserId = id == null ? "non-user" : id;
+                //var user= await _userManager.GetUserAsync(User);
+                comment.UserName = _context.Users.Where(x => x.Id == id).ToArray()[0].Ad;
+
                 comment.PlaceType = Constants.HotelType;
                 comment.PlaceId = model.Id;
                 _context.Add(comment);

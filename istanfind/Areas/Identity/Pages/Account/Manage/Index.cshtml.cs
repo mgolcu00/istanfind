@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using istanfind.Data;
 using istanfind.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,16 +15,26 @@ namespace istanfind.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-
+        private readonly ApplicationDbContext _context;
         public IndexModel(
             UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager, ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         public string Username { get; set; }
+
+        public IEnumerable<istanfind.Models.Comment> comments
+        {
+            get
+            {
+                var list = _context.Comment.Where(x => x.UserId == _userManager.GetUserId(User));
+                return list;
+            }
+        }
 
         [TempData]
         public string StatusMessage { get; set; }
@@ -92,5 +103,10 @@ namespace istanfind.Areas.Identity.Pages.Account.Manage
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
         }
+    }
+    public class UserCommentModel
+    {
+        public IEnumerable<istanfind.Models.Comment> comments { get; set; }
+        public IndexModel model { get; set; }
     }
 }
