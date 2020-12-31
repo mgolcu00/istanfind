@@ -9,6 +9,8 @@ using istanfind.Data;
 using istanfind.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace istanfind.Controllers
 {
@@ -16,10 +18,12 @@ namespace istanfind.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public HotelController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
+        private readonly UserManager<User> _userManager;
+        public HotelController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<User> userManager)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
+            _userManager = userManager;
         }
 
         // GET: Hotel
@@ -45,12 +49,13 @@ namespace istanfind.Controllers
             }
             var dynmicModel = new DynmicViewModel();
             dynmicModel.model = hotel;
-            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == hotel.Id).ToListAsync();
+            dynmicModel.comments = await _context.Comment.Where(x => x.PlaceId == hotel.Id && x.PlaceType == Constants.HotelType).ToListAsync();
 
             return View(dynmicModel);
         }
 
         // GET: Hotel/Create
+        [Authorize(Roles = Constants.AdministratorRole)]
         public IActionResult Create()
         {
             return View();
@@ -61,14 +66,16 @@ namespace istanfind.Controllers
         {
             if (ModelState.IsValid)
             {
-                var path = Request.Body;
-                comment.UserId = User.Identity.Name != null ? User.Identity.Name : "non user";
+                var id = _userManager.GetUserId(User);
+                comment.UserId = id == null ? "non user" : id;
+                comment.UserName = _context.Users.Where(x => x.Id == id).ToArray()[0].UserName;
+                comment.PlaceType = Constants.HotelType;
                 comment.PlaceId = model.Id;
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));//Details(model.Id).Result;
             }
-      
+
             return RedirectToAction(nameof(Index)); /*View(comment);*/
         }
         // POST: Hotel/Create
@@ -106,6 +113,7 @@ namespace istanfind.Controllers
         }
 
         // GET: Hotel/Edit/5
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -157,6 +165,7 @@ namespace istanfind.Controllers
         }
 
         // GET: Hotel/Delete/5
+        [Authorize(Roles = Constants.AdministratorRole)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -164,6 +164,9 @@ namespace istanfind.Data.Migrations
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
+                    b.Property<string>("PlaceType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Score")
                         .HasColumnType("float");
 
@@ -171,6 +174,9 @@ namespace istanfind.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
