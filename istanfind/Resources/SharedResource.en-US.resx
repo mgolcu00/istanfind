@@ -117,16 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adminler" xml:space="preserve">
+    <value>Administrators</value>
+  </data>
+  <data name="alisveris" xml:space="preserve">
+    <value>Shop</value>
+  </data>
   <data name="anasayfa" xml:space="preserve">
     <value>HomePage</value>
+  </data>
+  <data name="ayardegistir" xml:space="preserve">
+    <value>Change your account settings</value>
+  </data>
+  <data name="baskahizmet" xml:space="preserve">
+    <value>Use another service to log in.</value>
+  </data>
+  <data name="cikis" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="dahafazlasi" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="duzenle" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="eglencemekanlari" xml:space="preserve">
+    <value>Fun Places</value>
+  </data>
+  <data name="ekle" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="emailonayla" xml:space="preserve">
+    <value>Confirm email</value>
+  </data>
+  <data name="erisiminyok" xml:space="preserve">
+    <value>You are not authorized to access this resource.</value>
+  </data>
+  <data name="erisimreddedildi" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="giris" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="girisyazi" xml:space="preserve">
+    <value>Use a local account to log in.</value>
+  </data>
+  <data name="hakkinda" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="hakkinda1" xml:space="preserve">
+    <value>Istanbul… A mosaic of culture and history that has been the subject of songs, poems and novels.
+It will be very exciting and fun to explore Istanbul, the city of mosques, palaces, parks and mansions, which is unique in the world and dazzles with its historical and cultural texture on Europe and Asia.
+Below you can find useful information about Istanbul…</value>
+  </data>
+  <data name="hakkinda2" xml:space="preserve">
+    <value>Byzantium, Constantinople and Istanbul ...
+These three magical names symbolize the dazzling history of Istanbul.
+Few cities in the world are so special and exciting to explore.
+Istanbul has been ruled by 120 emperors and emperors throughout history and has been home to the three great civilizations mentioned above.</value>
+  </data>
+  <data name="hakkinda3" xml:space="preserve">
+    <value>The first settlement in the city center known as the Historical Peninsula of Istanbul,
+BC by the Greeks. It was founded in 685 and named here as "Byzantion".
+Historical Peninsula, which has been called by different names by different civilizations throughout history,
+During the Ottoman Empire, it was first called Dersaadet and then as Istanbul.
+Istanbul activities are unlimited.
+Istanbul, magnificent natural beauties, minarets reaching to the sky,
+gilded domes, palaces, mansions, museums, parks and gardens, monuments, towers,
+It fascinates its visitors with its culture and much more.
+It is unique in the world with its feature that unites Asia and Europe continents.
+And especially the Bosphorus-Istanbul Strait will affect you deeply.
+Unique natural beauties of Istanbul to the historical monuments of the Roman, Byzantine and Ottoman Empires
+When added, a magnificent picture emerges.</value>
+  </data>
+  <data name="hakkinda4" xml:space="preserve">
+    <value>Besides, Turkey's largest city Istanbul and not popular, arts, culture and economy of the area is also one of the world with 15 million population and Turkey's largest city.
+
+Places to visit in Istanbul are also unlimited.
+The most impressive places in Istanbul that catch the eye at first sight are the Historical Peninsula and Bosphorus.
+Travel in the Historical Peninsula, which includes historical places such as Topkapı Palace, Hagia Sophia and Blue Mosque, Grand Bazaar, Basilica Cistern, and Eminönü Galata Bridge
+The impressive Bosphorus tour, which starts from Anadolu Kavağı to Anadolu Kavağı, is one of the must-do sightseeing activities for Istanbul's visitors.
+Your Istanbul trip would not be complete without taking a traditional and unforgettable sea cruise on the Bosphorus, which separates Europe and Asia, with ferries or boats.</value>
+  </data>
+  <data name="hakkinda5" xml:space="preserve">
+    <value>Istanbul nightlife is completely different.
+Especially Taksim, İstiklal Street and Tunnel line host the most important venues of Istanbul nights.
+We can say that art and cultural activities in Istanbul are unlimited.</value>
+  </data>
+  <data name="herkes" xml:space="preserve">
+    <value>Everyone</value>
+  </data>
+  <data name="hesabiyonet" xml:space="preserve">
+    <value>Manage your account</value>
+  </data>
+  <data name="hesapekle" xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="istanbulhakkinda" xml:space="preserve">
+    <value>About Istanbul</value>
+  </data>
+  <data name="istanbulukesfet" xml:space="preserve">
+    <value>Explore Istanbul</value>
+  </data>
+  <data name="kayit" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="kesfet" xml:space="preserve">
     <value>Explore</value>
   </data>
+  <data name="kullanicilariyonet" xml:space="preserve">
+    <value>Manage Users</value>
+  </data>
+  <data name="kullaniciyonet" xml:space="preserve">
+    <value>Manage Users</value>
+  </data>
+  <data name="listeyedon" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
   <data name="merhaba" xml:space="preserve">
     <value>Hello</value>
   </data>
+  <data name="oteller" xml:space="preserve">
+    <value>Hotels</value>
+  </data>
+  <data name="ourteam" xml:space="preserve">
+    <value>CHECK OUR TEAM</value>
+  </data>
+  <data name="parklar" xml:space="preserve">
+    <value>Parks</value>
+  </data>
+  <data name="profil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="restoranlar" xml:space="preserve">
+    <value>Restaurants</value>
+  </data>
+  <data name="sifre" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="sifreunuttunmu" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="sil" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="silecekmisin" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
   <data name="takim" xml:space="preserve">
     <value>Team</value>
+  </data>
+  <data name="tarihimekanlar" xml:space="preserve">
+    <value>Historical Places</value>
+  </data>
+  <data name="yenikullanici" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="yorum" xml:space="preserve">
+    <value>Comment</value>
   </data>
 </root>
