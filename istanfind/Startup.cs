@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,24 +43,44 @@ namespace istanfind
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+
+                options.Password.RequiredLength = 2;
+
+                options.Lockout.AllowedForNewUsers = false;
+
+            });
+
+
             services.AddSingleton<LocService>();
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
-            services.AddMvc();
-            services.Configure<RequestLocalizationOptions>(options =>
-{
-    var supportedCultures = new List<CultureInfo>
-        {
-                        new CultureInfo("en-US"),
-                        new CultureInfo("tr-TR")
-        };
+            services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
 
-    options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
-    options.SupportedCultures = supportedCultures;
-    options.SupportedUICultures = supportedCultures;
+            services.AddMvc()
+                .AddViewLocalization(
+                    LanguageViewLocationExpanderFormat.Suffix,
+                    opts => { opts.ResourcesPath = "Resources"; })
+                .AddDataAnnotationsLocalization();
 
-    options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+            services.Configure<RequestLocalizationOptions>(
+       opts =>
+       {
+           var supportedCultures = new List<CultureInfo>
+           {
+                new CultureInfo("en-US"),
+                new CultureInfo("tr-TR")
+           };
 
-});
+           opts.DefaultRequestCulture = new RequestCulture("tr-TR");
+           // Formatting numbers, dates, etc.
+           opts.SupportedCultures = supportedCultures;
+           // UI strings that we have localized.
+           opts.SupportedUICultures = supportedCultures;
+       });
         }
 
 
@@ -79,7 +100,7 @@ namespace istanfind
         private static async Task EnsureTestAdminAsync(UserManager<User> userManager)
         {
             var testAdmin = await userManager.Users
-                .Where(x => x.UserName == "g181210065@sakarya.edu.tr")
+                .Where(x => x.UserName == "g181210059@sakarya.edu.tr")
                 .SingleOrDefaultAsync();
 
             if (testAdmin != null)
@@ -91,10 +112,12 @@ namespace istanfind
             {
 
             }
-
-            //testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "admin@istanfind.com", Email = "admin@istanfind.com" };
-            //await userManager.CreateAsync(testAdmin, "aA_123456");
-            //await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
+            //buralar de?i?ecek
+            testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "g181210059@sakarya.edu.tr", Email = "g181210059@sakarya.edu.tr" };
+            await userManager.CreateAsync(testAdmin, "123");
+            var token = await userManager.GenerateEmailConfirmationTokenAsync(testAdmin);
+            await userManager.ConfirmEmailAsync(testAdmin, token);
+            await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
         }
 
 
@@ -122,8 +145,8 @@ namespace istanfind
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             // localization
-            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(locOptions.Value);
+            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(options.Value);
 
             // localization
             app.UseRouting();
