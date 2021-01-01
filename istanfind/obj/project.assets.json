@@ -9717,20 +9717,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\akiny\\.nuget\\packages\\": {}
+    "C:\\Users\\mertg\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\istanfind.csproj",
+      "projectUniqueName": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj",
       "projectName": "istanfind",
-      "projectPath": "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\istanfind.csproj",
-      "packagesPath": "C:\\Users\\akiny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\akiny\\OneDrive\\Masaüstü\\istanfind\\istanfind\\obj\\",
+      "projectPath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj",
+      "packagesPath": "C:\\Users\\mertg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\akiny\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\mertg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9810,7 +9817,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

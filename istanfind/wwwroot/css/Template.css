@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 
     #header .logo {
         font-size: 32px;
-        margin: 0;
+        margin-left: 256px;
         padding: 0;
         line-height: 1;
         font-weight: 700;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 
     #headerBlack .logo {
         font-size: 32px;
-        margin: 0;
+        margin-left: 256px;
         padding: 0;
         line-height: 1;
         font-weight: 700;
@@ -200,20 +200,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu a {
     display: block;
-    position: relative;
+    position: center;
     color: #fff;
+    text-align: center;
     transition: 0.3s;
-    font-size: 15px;
+    font-size: 18px;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
 }
 
-/*    .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+    /*    .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
         color: #ffc451;
     }*/
     .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
         color: #ee6582;
     }
+
 .nav-menu .drop-down ul {
     display: block;
     position: absolute;
@@ -301,7 +303,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 7px 25px 8px 25px;
     white-space: nowrap;
     transition: 0.3s;
-    font-size: 14px;
+    font-size: 18px;
     display: inline-block;
     border: 2px solid #ffc451;
 }
