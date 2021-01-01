@@ -1,41 +1,45 @@
 ﻿@model istanfind.Controllers.ManageUsersViewModel
-
+@using istanfind.Resources
+@inject LocService SharedLocalizer
 @{ ViewData["Title"] = "Manage users"; }
 
-<h2>@ViewData["Title"]</h2>
+<h2>@SharedLocalizer.GetLocalizedHtmlString("kullaniciyonet")</h2>
+<hr />
 
-<h3>Administrators</h3>
+<h3>@SharedLocalizer.GetLocalizedHtmlString("adminler")</h3>
 
 <table class="table">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>Email</td>
-        </tr>
-    </thead>
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Email</td>
+		</tr>
+	</thead>
 
-    @foreach (var user in Model.Administrators)
-    {
-<tr>
-    <td>@user.Id</td>
-    <td>@user.Email</td>
-</tr>}
+	@foreach (var user in Model.Administrators)
+	{
+		<tr>
+			<td>@user.Id</td>
+			<td>@user.Email</td>
+		</tr>
+}
 </table>
 
-<h3>Everyone</h3>
+<h3>@SharedLocalizer.GetLocalizedHtmlString("herkes")</h3>
 
 <table class="table">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>Email</td>
-        </tr>
-    </thead>
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Email</td>
+		</tr>
+	</thead>
 
-    @foreach (var user in Model.Everyone)
-    {
-<tr>
-    <td>@user.Id</td>
-    <td>@user.Email</td>
-</tr>}
+	@foreach (var user in Model.Everyone)
+	{
+		<tr>
+			<td>@user.Id</td>
+			<td>@user.Email</td>
+		</tr>
+}
 </table>

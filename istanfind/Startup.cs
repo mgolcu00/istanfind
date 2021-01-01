@@ -79,7 +79,7 @@ namespace istanfind
         private static async Task EnsureTestAdminAsync(UserManager<User> userManager)
         {
             var testAdmin = await userManager.Users
-                .Where(x => x.UserName == "admin@istanfind.com")
+                .Where(x => x.UserName == "g181210065@sakarya.edu.tr")
                 .SingleOrDefaultAsync();
 
             if (testAdmin != null)

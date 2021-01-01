@@ -117,16 +117,160 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adminler" xml:space="preserve">
+    <value>Adminler</value>
+  </data>
+  <data name="alisveris" xml:space="preserve">
+    <value>Alışveriş</value>
+  </data>
   <data name="anasayfa" xml:space="preserve">
     <value>Anasayfa</value>
+  </data>
+  <data name="ayardegistir" xml:space="preserve">
+    <value>Hesap ayarlarınızı değiştirin</value>
+  </data>
+  <data name="baskahizmet" xml:space="preserve">
+    <value>Oturum açmak için başka bir hizmet kullanın.</value>
+  </data>
+  <data name="cikis" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="dahafazlasi" xml:space="preserve">
+    <value>Daha fazlası</value>
+  </data>
+  <data name="duzenle" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="eglencemekanlari" xml:space="preserve">
+    <value>Eğlence Mekanları</value>
+  </data>
+  <data name="ekle" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="emailonayla" xml:space="preserve">
+    <value>E-postanızı Onaylayın</value>
+  </data>
+  <data name="erisiminyok" xml:space="preserve">
+    <value>Bu kaynağa erişebilecek yetkide değilsiniz.</value>
+  </data>
+  <data name="erisimreddedildi" xml:space="preserve">
+    <value>Erişim reddedildi</value>
+  </data>
+  <data name="giris" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="girisyazi" xml:space="preserve">
+    <value>Giriş yapmak için yerel bir hesap kullanın.</value>
+  </data>
+  <data name="hakinda5" xml:space="preserve">
+    <value>İstanbul gece hayatı ise bambaşka.
+					Özellikle Taksim, İstiklal Caddesi ve Tünel hattı İstanbul gecelerinin en önemli mekanlarını barındırmaktadır.
+					İstanbul’da sanat ve kültür aktiviteleri ise sınırsızdır diyebiliriz.</value>
+  </data>
+  <data name="hakkinda" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="hakkinda1" xml:space="preserve">
+    <value>İstanbul… Şarkılara, şiirlere, romanlara konu olmuş bir kültür ve tarih mozaiği…
+					Dünyada eşi benzeri bulunmayan ve Avrupa ile Asya kıtaları üzerinde tarihi ve kültürel dokusuyla göz kamaştıran camiler, saraylar, parklar ve köşkler şehri İstanbul’u keşfetmek çok heyecanlı ve eğlenceli olacaktır.
+					Aşağıda İstanbul ile ilgili faydalı bilgileri bulabilirsiniz…</value>
+  </data>
+  <data name="hakkinda2" xml:space="preserve">
+    <value>Bizans, Konstantiniye ve İstanbul…
+					Bu üç sihirli isim İstanbul’un güz kamaştıran tarihini simgelemektedir.
+					Dünya’da çok az şehir bu kadar özel ve keşfetmesi çok heyecan vericidir.
+					İstanbul, tarih boyunca 120 kayser ve imparator tarafından yönetilmiş ve yukarıda anılan üç büyük medeniyete ev sahipliği yapmıştır.</value>
+  </data>
+  <data name="hakkinda3" xml:space="preserve">
+    <value>İstanbul’un Tarihi Yarımadası olarak bilinen kent merkezinde ilk yerleşim yeri,
+					Yunanlılar tarafından İ.Ö. 685 yılında kurulmuş ve buraya “Byzantion” adı verilmiş.
+					Tarih boyunca farklı uygarlıklarca değişik isimlerle anılmış olan Tarihi Yarımada,
+					Osmanlı İmparatorluğu döneminde ise ilk olarak Dersaadet ve sonrasında da İstanbul olarak anılmıştır.
+					İstanbul aktiviteleri sınırsızdır.
+					İstanbul, muhteşem doğal güzellikleri, gökyüzüne uzanan minareleri,
+					altın yaldızlı kubbeleri, sarayları, köşkleri, müzeleri, park ve bahçeleri, anıtları, kuleleri,
+					kültürü ve çok daha fazlasıyla ziyaretçilerini büyülemektedir.
+					Asya ve Avrupa kıtalarını birleştiren özelliğiyle de dünyada eşsizdir.
+					Ve özellikle Boğaziçi-İstanbul Boğazı sizleri derinlemesine etkileyecektir.
+					Roma, Bizans ve Osmanlı İmparatorluğu’nun tarihi eserlerine İstanbul’un eşsiz doğal güzellikleri
+					de eklenince ortaya muhteşem bir tablo çıkmaktadır.</value>
+  </data>
+  <data name="hakkinda4" xml:space="preserve">
+    <value>Türkiye’nin en büyük ve popüler şehri olmasının yanında İstanbul, sanat, kültür ve ekonomi alanında da aynı zamanda 15 milyonluk nüfusu ile Türkiye ve dünyanın en büyük kentlerinden birisidir.
+
+					İstanbul’da gezilecek yerler de sınırsızdır.
+					İstanbul’un ilk bakışta göze çarpan en etkileyici yerleri Tarihi Yarımada ve Boğaziçi’dir.
+					Topkapı Sarayı, Ayasofya ve Sultanahmet Camii, Kapalıçarşı, Yerebatan Sarnıcı gibi tarihi yerleri barındıran Tarihi Yarımadada gezi ve Eminönü Galata Köprüsünden
+					başlayarak Anadolu Kavağı’na kadar süren etkileyici İstanbul Boğaz turu, İstanbul’un ziyaretçilerinin mutlaka yapması gereken gezi aktivitelerinin başında gelmektedir.
+					Avrupa ve Asya’yı ayıran İstanbul Boğazı’nda vapur veya teknelerle geleneksel ve unutulmaz bir deniz gezisi yapmadan İstanbul geziniz tamamlanmış sayılmaz.</value>
+  </data>
+  <data name="herkes" xml:space="preserve">
+    <value>Herkes</value>
+  </data>
+  <data name="hesabiyonet" xml:space="preserve">
+    <value>Hesabınızı Yönetin</value>
+  </data>
+  <data name="hesapekle" xml:space="preserve">
+    <value>Yeni bir hesap oluşturun.</value>
+  </data>
+  <data name="istanbulhakkinda" xml:space="preserve">
+    <value>İstanbul Hakkında</value>
+  </data>
+  <data name="istanbulukesfet" xml:space="preserve">
+    <value>İstanbulu Keşfet</value>
+  </data>
+  <data name="kayit" xml:space="preserve">
+    <value>Kayıt Ol</value>
   </data>
   <data name="kesfet" xml:space="preserve">
     <value>Keşfet</value>
   </data>
+  <data name="kullanicilariyonet" xml:space="preserve">
+    <value>Kullanıcıları Yönet</value>
+  </data>
+  <data name="kullaniciyonet" xml:space="preserve">
+    <value>Kullanıcıları Yönet</value>
+  </data>
+  <data name="listeyedon" xml:space="preserve">
+    <value>Listeye Dön</value>
+  </data>
   <data name="merhaba" xml:space="preserve">
     <value>Merhaba</value>
   </data>
+  <data name="oteller" xml:space="preserve">
+    <value>Oteller</value>
+  </data>
+  <data name="ourteam" xml:space="preserve">
+    <value>TAKIMIMIZ</value>
+  </data>
+  <data name="parklar" xml:space="preserve">
+    <value>Parklar</value>
+  </data>
+  <data name="profil" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="restoranlar" xml:space="preserve">
+    <value>Restoranlar</value>
+  </data>
+  <data name="sifre" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="sifreunuttunmu" xml:space="preserve">
+    <value>Şifrenizi mi unuttunuz?</value>
+  </data>
+  <data name="sil" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="silecekmisin" xml:space="preserve">
+    <value>Silmek istediğinize emin misiniz ?</value>
+  </data>
   <data name="takim" xml:space="preserve">
     <value>Takım</value>
+  </data>
+  <data name="tarihimekanlar" xml:space="preserve">
+    <value>Tarihi Mekanlar</value>
+  </data>
+  <data name="yenikullanici" xml:space="preserve">
+    <value>Yeni kullanıcı olarak kaydolun</value>
   </data>
 </root>

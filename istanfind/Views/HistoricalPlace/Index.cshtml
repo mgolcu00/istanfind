@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<istanfind.Models.HistoricalPlace>
-
+@using istanfind.Resources
+@inject LocService SharedLocalizer
 @{
 	ViewData["Title"] = "Index";
 }
 
-<h1 class="header-main">Tarihi Mekanlar</h1>
+<h1 class="header-main">@SharedLocalizer.GetLocalizedHtmlString("tarihimekanlar")</h1>
 <hr />
 
 <p>
-	<a class="btn btn-secondary" style="margin:16px;" asp-action="Create">Create New</a>
+	<a class="btn btn-secondary" style="margin:16px;" asp-action="Create">@SharedLocalizer.GetLocalizedHtmlString("ekle")</a>
 </p>
 
 <div class="main-list">
@@ -24,8 +25,8 @@
 						<p class="card-text">@Html.DisplayFor(modelItem => item.TitleText)</p>
 					</div>
 					<div class="card-footer">
-						<a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Daha fazlası</a>
-						<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+						<a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">@SharedLocalizer.GetLocalizedHtmlString("dahafazlasi")</a>
+						<a asp-action="Delete" asp-route-id="@item.Id">@SharedLocalizer.GetLocalizedHtmlString("sil")</a>
 					</div>
 				</div>
 			</div>

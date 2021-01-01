@@ -1,12 +1,13 @@
 ﻿@model istanfind.Models.FunPlace
-
+@using istanfind.Resources
+@inject LocService SharedLocalizer
 @{
 	ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>@SharedLocalizer.GetLocalizedHtmlString("ekle")</h1>
 
-<h4>Hotel</h4>
+<h4>@SharedLocalizer.GetLocalizedHtmlString("eglencemekanlari")</h4>
 <hr />
 <div class="row">
 	<div class="col-md-4">
@@ -74,7 +75,7 @@
 </div>
 
 <div>
-	<a asp-action="Index">Back to List</a>
+	<a asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("listeyedon")</a>
 </div>
 
 @section Scripts {
