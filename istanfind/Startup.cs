@@ -52,7 +52,7 @@ namespace istanfind
 
                 options.Password.RequiredLength = 2;
 
-                options.Lockout.AllowedForNewUsers = false;
+                //options.Lockout.AllowedForNewUsers = false;
 
             });
 
