@@ -22,15 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\hotel\" />
-    <Folder Include="wwwroot\images\historicalplace\" />
-    <Folder Include="wwwroot\images\funplace\" />
-    <Folder Include="wwwroot\images\shop\" />
-    <Folder Include="wwwroot\images\restaurant\" />
-    <Folder Include="wwwroot\images\park\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Views\ManageUsers\Index.cshtml" />
   </ItemGroup>
 
