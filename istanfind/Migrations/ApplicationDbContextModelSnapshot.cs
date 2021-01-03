@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using istanfind.Data;
 
-namespace istanfind.Data.Migrations
+namespace istanfind.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210102200518_AddData")]
-    partial class AddData
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -813,7 +811,7 @@ namespace istanfind.Data.Migrations
                             Adress = "Ünalan, Libadiye Cd. No:88, 34700 Üsküdar/İstanbul",
                             AdressUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.9971545077697!2d29.069191215413923!3d41.003435479301345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac7de4d07f7ef%3A0xbc3f51296f041508!2sEmaar%20Square%20Mall!5e0!3m2!1str!2str!4v1609614577437!5m2!1str!2str",
                             DataText = "2017 yılında kapılarını açmış olan Emaar Square Mall, Anadolu Yakası’nın en büyük, İstanbul’un ise en büyük 3’üncü alışveriş merkezi. Üsküdar’da yer alan AVM, merkezi lokasyonu ve kapsadığı geniş alanla oldukça avantajlı durumda. 138 bin 423 metrekare alana sahip olan bina bu özelliğini çok daha kapsamlı olarak kullanmış.491 ayrı markayla çalışan AVM, Türkiye’de ve Anadolu yakasında birçok markanın bulunduğu tek yer. Dünya moda devlerine, lüks ve ulaşılabilir lüks markalar kadar ekonomik markalara da ev sahipliği yapıyor. Bu merkez İstanbul’da yaşayanlar için ilk alışveriş merkezi seçeneği olabilir.Emaar Square Mall birçok etkinlik ve geniş yelpazedeki marka ve mağazalarıyla kesinlikle birçok ziyaretçi için İstanbul’daki en iyi AVM olarak yerini alıyor.Seçkin gastronomi markaları, dünya mutfağı, geleneksel Türk mutfağı, alanında öncü cafe ve restoranlar da Emaar Square’in bir parçası.Aynı zamanda Emaar Square Anadolu Yakası’nın tek su altı hayvanat bahçesi ve akvaryumuna, tek 4DX sinemasına sahip.İstanbul’daki en büyük 10 alışveriş merkezinden biri olan ve tüm bu özellikleriyle birçok ziyaretçi için kesinlikle ilk sırada olan Emaar Square Mall, 2017 yılından günümüze geçen kısa sürede adından söz ettirmeyi başardı.",
-                            ImageUrl = "\\images\\shop\\emar.png",
+                            ImageUrl = "\\images\\shop\\emar.jpg",
                             Name = "Emaar Square Mall",
                             PhoneNumber = "0850 290 8090",
                             Score = 100.0,
