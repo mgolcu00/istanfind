@@ -56,8 +56,8 @@ namespace istanfind.Data
                  },
                  new Hotel()
                  {
-                     Id =3,
-                     Name ="Swissotel The Bosphorus",
+                     Id = 3,
+                     Name = "Swissotel The Bosphorus",
                      PhoneNumber = "Telefon: (0212) 326 11 00",
                      WebSiteUrl = " https://www.swissotel.com.tr/hotels/istanbul/",
                      Adress = "Vişnezade Mah. Acısu Sok. No:19, İstanbul 34357 Türkiye",
@@ -69,7 +69,7 @@ namespace istanfind.Data
                  },
                  new Hotel()
                  {
-                     Id =4,
+                     Id = 4,
                      Name = "Radisson Blu Hotel Istanbul Ottomare",
                      PhoneNumber = "(0212) 939 45 00",
                      WebSiteUrl = "https://www.radissonhotels.com/tr-tr/oteller/radisson-blu-istanbul-ottomare",
@@ -94,9 +94,10 @@ namespace istanfind.Data
                      ImageUrl = "\\images\\hotel\\whitehouse.jpg",
                  }
                 
+
                );
             builder.Entity<Restaurant>().HasData(
-                  
+
                  new Restaurant()
                  {
                      Id = 1,
@@ -125,7 +126,7 @@ namespace istanfind.Data
                  },
                  new Restaurant()
                  {
-                     Id =3,
+                     Id = 3,
                      Name = "Hatay Medeniyetler Sofrası",
                      PhoneNumber = "(0212) 358 30 22",
                      WebSiteUrl = " https://www.hataymedeniyetlersofrasi.com.tr/tr/hakkimizda ",
@@ -238,7 +239,7 @@ namespace istanfind.Data
             {
                 Id = 1,
                 Name = "Kapalı Çarşı",
-                PhoneNumber ="0212 519 12 48",
+                PhoneNumber = "0212 519 12 48",
                 WebSiteUrl = "https://istanbeautiful.com/tr/kapalicarsi-istanbul/",
                 Adress = "Kalpakçılar Cad., Kapalıçarşı, Beyazıt, Fatih",
                 AdressUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48170.654760315534!2d28.933049179101562!3d41.010684800000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab99162d70527%3A0x64c8680b5ac198ab!2zS2FwYWzEsSDDh2FyxZ_EsQ!5e0!3m2!1str!2str!4v1609613499868!5m2!1str!2str",
@@ -297,7 +298,7 @@ namespace istanfind.Data
                 Score = 100,
                 DataText = "2017 yılında kapılarını açmış olan Emaar Square Mall, Anadolu Yakası’nın en büyük, İstanbul’un ise en büyük 3’üncü alışveriş merkezi. Üsküdar’da yer alan AVM, merkezi lokasyonu ve kapsadığı geniş alanla oldukça avantajlı durumda. 138 bin 423 metrekare alana sahip olan bina bu özelliğini çok daha kapsamlı olarak kullanmış.491 ayrı markayla çalışan AVM, Türkiye’de ve Anadolu yakasında birçok markanın bulunduğu tek yer. Dünya moda devlerine, lüks ve ulaşılabilir lüks markalar kadar ekonomik markalara da ev sahipliği yapıyor. Bu merkez İstanbul’da yaşayanlar için ilk alışveriş merkezi seçeneği olabilir.Emaar Square Mall birçok etkinlik ve geniş yelpazedeki marka ve mağazalarıyla kesinlikle birçok ziyaretçi için İstanbul’daki en iyi AVM olarak yerini alıyor.Seçkin gastronomi markaları, dünya mutfağı, geleneksel Türk mutfağı, alanında öncü cafe ve restoranlar da Emaar Square’in bir parçası.Aynı zamanda Emaar Square Anadolu Yakası’nın tek su altı hayvanat bahçesi ve akvaryumuna, tek 4DX sinemasına sahip.İstanbul’daki en büyük 10 alışveriş merkezinden biri olan ve tüm bu özellikleriyle birçok ziyaretçi için kesinlikle ilk sırada olan Emaar Square Mall, 2017 yılından günümüze geçen kısa sürede adından söz ettirmeyi başardı.",
                 TitleText = "2017 yılında kapılarını açmış olan Emaar Square Mall, Anadolu Yakası’nın en büyük, İstanbul’un ise en büyük 3’üncü alışveriş merkezi. Üsküdar’da yer alan AVM, merkezi lokasyonu ve kapsadığı geniş alanla oldukça avantajlı durumda. 138 bin 423 metrekare alana sahip olan bina bu özelliğini çok daha kapsamlı olarak kullanmış.",
-                ImageUrl = "\\images\\shop\\emar.png",
+                ImageUrl = "\\images\\shop\\emar.jpg",
             }
 
            );
@@ -345,7 +346,7 @@ namespace istanfind.Data
              },
               new FunPlace()
               {
-                  Id =4,
+                  Id = 4,
                   Name = "İstanbul Dolphinarium",
                   PhoneNumber = "0212 581 78 78",
                   WebSiteUrl = "http://www.istanbuldolphinarium.com/",
@@ -388,7 +389,7 @@ namespace istanfind.Data
            },
             new HistoricalPlace()
             {
-                Id =2,
+                Id = 2,
                 Name = "Topkapı Sarayı Müzesi",
                 PhoneNumber = "",
                 WebSiteUrl = "https://www.millisaraylar.gov.tr/saraylar/topkapi-sarayi",
@@ -401,7 +402,7 @@ namespace istanfind.Data
             },
              new HistoricalPlace()
              {
-                 Id =3,
+                 Id = 3,
                  Name = "St Antuan Kilisesi",
                  PhoneNumber = "",
                  WebSiteUrl = "https://www.sentantuan.com/",

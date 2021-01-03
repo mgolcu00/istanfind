@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 
     #header .logo {
         font-size: 32px;
-        margin-left: 256px;
+        margin-left: 160px;
         padding: 0;
         line-height: 1;
         font-weight: 700;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 
     #headerBlack .logo {
         font-size: 32px;
-        margin-left: 256px;
+        margin-left: 160px;
         padding: 0;
         line-height: 1;
         font-weight: 700;

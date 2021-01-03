@@ -6,105 +6,108 @@
 @model istanfind.Controllers.DynmicViewModel
 
 @{
-	ViewData["Title"] = @Html.DisplayFor(model => model.model.Name);
+    ViewData["Title"] = @Html.DisplayFor(model => model.model.Name);
 }
 
 <div class="container">
-	<div class="row">
-		<img class="col img-fluid" src="@Url.Content(Model.model.ImageUrl)" alt="">
-		<!-- 4:3 aspect ratio -->
-		<div class="col embed-responsive embed-responsive-4by3">
-			<iframe class="embed-responsive-item" src="@Url.Content(Model.model.AdressUrl)" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-		</div>
-	</div>
+    <div class="row" style="margin-top:64px;">
+        <div class="col">
+            <img class="img-thumbnail" src="@Url.Content(Model.model.ImageUrl)" alt="">
+        </div>
 
-	<h1>@Html.DisplayFor(model => model.model.Name)</h1>
+        <!-- 4:3 aspect ratio -->
+        <div class="col embed-responsive">
+            <iframe class="embed-responsive-item" src="@Url.Content(Model.model.AdressUrl)" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-md-auto">
-			<p><img src="~/img/star.png" width="18" height="18" />@Html.DisplayFor(model => model.model.Score)/100</p>
-		</div>
-		<div class="col-md-auto">
-			<a href="tel:@Html.DisplayFor(model => model.model.PhoneNumber)"><img src="~/img/phone-call.png" width="18" height="18" />@Html.DisplayFor(model => model.model.PhoneNumber)</a>
-		</div>
-		<div class="col-md-auto">
-			
-			<a href="@Html.DisplayFor(model => model.model.WebSiteUrl)"><img src="~/img/website.png" width="18" height="18" />Web Site</a>
-		</div>
-		<div class="col-md-auto">
-			<p><img src="~/img/location.png" width="18" height="18" />@Html.DisplayFor(model => model.model.Adress)</p>
-		</div>
-	</div>
+    <h1>@Html.DisplayFor(model => model.model.Name)</h1>
 
-	<hr /><br />
-	<div class="container">
-		<h3>@SharedLocalizer.GetLocalizedHtmlString("hakkinda")</h3>
-		<hr />
-		<p> @Html.DisplayFor(model => model.model.DataText)</p>
+    <div class="row">
+        <div class="col-md-auto">
+            <p><img src="~/img/star.png" width="18" height="18" />@Html.DisplayFor(model => model.model.Score)/100</p>
+        </div>
+        <div class="col-md-auto">
+            <a href="tel:@Html.DisplayFor(model => model.model.PhoneNumber)"><img src="~/img/phone-call.png" width="18" height="18" />@Html.DisplayFor(model => model.model.PhoneNumber)</a>
+        </div>
+        <div class="col-md-auto">
 
-	</div>
+            <a href="@Html.DisplayFor(model => model.model.WebSiteUrl)"><img src="~/img/website.png" width="18" height="18" />Web Site</a>
+        </div>
+        <div class="col-md-auto">
+            <p><img src="~/img/location.png" width="18" height="18" />@Html.DisplayFor(model => model.model.Adress)</p>
+        </div>
+    </div>
 
-	<br />
-	<br />
-	<br />
+    <hr /><br />
+    <div class="container">
+        <h3>@SharedLocalizer.GetLocalizedHtmlString("hakkinda")</h3>
+        <hr />
+        <p> @Html.DisplayFor(model => model.model.DataText)</p>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
 
 
 
 
-	<ul class="list-group">
-		@foreach (var item in Model.comments)
-		{
-			<li class="list-group-item">
-				<div class="row">
-					<div class="col-3">
-						@Html.DisplayFor(modelItem => item.UserName)
-						<br />
-						@Html.DisplayFor(modelItem => item.Score)
-					</div>
-					<div class="col">
-						@Html.DisplayFor(modelItem => item.Text)
-					</div>
-				</div>
+    <ul class="list-group">
+        @foreach (var item in Model.comments)
+        {
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-3">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                        <br />
+                        @Html.DisplayFor(modelItem => item.Score)
+                    </div>
+                    <div class="col">
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </div>
+                </div>
 
-			</li>
-		}
-	</ul>
+            </li>
+        }
+    </ul>
 
-	@*Yorum yapma kısmı*@
+    @*Yorum yapma kısmı*@
 
-	@if (SignInManager.IsSignedIn(User))
-	{
-		<div class="row">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="row">
 
-			<div class="col-md-4">
+            <div class="col-md-4">
 
-				<form asp-action="AddComment">
-					<div class="form-group">
-						<label asp-for="comment.Text" class="control-label"></label>
-						<input asp-for="comment.Text" class="form-control" />
-						<span asp-validation-for="comment.Text" class="text-danger"></span>
-					</div>
-					<input type="hidden" asp-for="model.Id" class="form-control" />
-					
-					<div class="form-group">
-						<label asp-for="comment.Score" class="control-label"></label>
-						<input asp-for="comment.Score" class="form-control" />
-						<span asp-validation-for="comment.Score" class="text-danger"></span>
-					</div>
-					<div class="form-group">
-						<input type="submit" value="AddComment" class="btn btn-primary" />
-					</div>
-				</form>
+                <form asp-action="AddComment">
+                    <div class="form-group">
+                        <label asp-for="comment.Text" class="control-label"></label>
+                        <input asp-for="comment.Text" class="form-control" />
+                        <span asp-validation-for="comment.Text" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="model.Id" class="form-control" />
 
-			</div>
+                    <div class="form-group">
+                        <label asp-for="comment.Score" class="control-label"></label>
+                        <input asp-for="comment.Score" class="form-control" />
+                        <span asp-validation-for="comment.Score" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="AddComment" class="btn btn-primary" />
+                    </div>
+                </form>
 
-		</div>
-	}
-	<div>
-		<a asp-action="Edit" asp-route-id="@Model.model.Id">@SharedLocalizer.GetLocalizedHtmlString("duzenle")</a>
-		<br />
-		<a asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("listeyedon")</a>
-	</div>
+            </div>
+
+        </div>
+    }
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.model.Id">@SharedLocalizer.GetLocalizedHtmlString("duzenle")</a>
+        <br />
+        <a asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("listeyedon")</a>
+    </div>
 
 </div>
 
@@ -112,5 +115,5 @@
 
 
 @section Scripts {
-	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
