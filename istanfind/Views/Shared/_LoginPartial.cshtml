@@ -9,38 +9,41 @@
 
 
 <ul>
-	@if (SignInManager.IsSignedIn(User))
-	{
-		var currentUser = await UserManager.GetUserAsync(User);
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var currentUser = await UserManager.GetUserAsync(User);
+        if (currentUser == null)
+        {
+            return;
+        }
+        var isAdmin = currentUser != null
+            && await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
 
-		var isAdmin = currentUser != null
-			&& await UserManager.IsInRoleAsync(currentUser, Constants.AdministratorRole);
-
-		<li>
-			<a class="get-started-btn btn-dark " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@SharedLocalizer.GetLocalizedHtmlString("merhaba") @currentUser.Ad!</a>
-		</li>
-		<li>
-			<form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-				<button type="submit" class="get-started-btn btn-dark scrollto">@SharedLocalizer.GetLocalizedHtmlString("cikis")</button>
-			</form>
-		</li>
+        <li>
+            <a class="get-started-btn btn-dark " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@SharedLocalizer.GetLocalizedHtmlString("merhaba") @currentUser.Ad!</a>
+        </li>
+        <li>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="get-started-btn btn-dark scrollto">@SharedLocalizer.GetLocalizedHtmlString("cikis")</button>
+            </form>
+        </li>
 
 
-		if (isAdmin)
-		{
-			@*<ul class="nav navbar-nav navbar-right"> </ul>*@
-			<li><a class="get-started-btn btn-dark scrollto" asp-controller="ManageUsers" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("kullanicilariyonet")</a></li>
+        if (isAdmin)
+        {
+            @*<ul class="nav navbar-nav navbar-right"> </ul>*@
+            <li><a class="get-started-btn btn-dark scrollto" asp-controller="ManageUsers" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("kullanicilariyonet")</a></li>
 
-		}
+        }
 
-	}
-	else
-	{
-		<li>
-			<a asp-area="Identity" asp-page="/Account/Login" class="get-started-btn scrollto">@SharedLocalizer.GetLocalizedHtmlString("giris")</a>
-		</li>
-		<li>
-			<a asp-area="Identity" asp-page="/Account/Register" class="get-started-btn scrollto">@SharedLocalizer.GetLocalizedHtmlString("kayit")</a>
-		</li>
-	}
+    }
+    else
+    {
+        <li>
+            <a asp-area="Identity" asp-page="/Account/Login" class="get-started-btn scrollto">@SharedLocalizer.GetLocalizedHtmlString("giris")</a>
+        </li>
+        <li>
+            <a asp-area="Identity" asp-page="/Account/Register" class="get-started-btn scrollto">@SharedLocalizer.GetLocalizedHtmlString("kayit")</a>
+        </li>
+    }
 </ul>

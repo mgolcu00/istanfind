@@ -162,11 +162,6 @@
   <data name="girisyazi" xml:space="preserve">
     <value>Giriş yapmak için yerel bir hesap kullanın.</value>
   </data>
-  <data name="hakinda5" xml:space="preserve">
-    <value>İstanbul gece hayatı ise bambaşka.
-					Özellikle Taksim, İstiklal Caddesi ve Tünel hattı İstanbul gecelerinin en önemli mekanlarını barındırmaktadır.
-					İstanbul’da sanat ve kültür aktiviteleri ise sınırsızdır diyebiliriz.</value>
-  </data>
   <data name="hakkinda" xml:space="preserve">
     <value>Hakkında</value>
   </data>
@@ -203,6 +198,11 @@
 					Topkapı Sarayı, Ayasofya ve Sultanahmet Camii, Kapalıçarşı, Yerebatan Sarnıcı gibi tarihi yerleri barındıran Tarihi Yarımadada gezi ve Eminönü Galata Köprüsünden
 					başlayarak Anadolu Kavağı’na kadar süren etkileyici İstanbul Boğaz turu, İstanbul’un ziyaretçilerinin mutlaka yapması gereken gezi aktivitelerinin başında gelmektedir.
 					Avrupa ve Asya’yı ayıran İstanbul Boğazı’nda vapur veya teknelerle geleneksel ve unutulmaz bir deniz gezisi yapmadan İstanbul geziniz tamamlanmış sayılmaz.</value>
+  </data>
+  <data name="hakkinda5" xml:space="preserve">
+    <value>İstanbul gece hayatı ise bambaşka.
+					Özellikle Taksim, İstiklal Caddesi ve Tünel hattı İstanbul gecelerinin en önemli mekanlarını barındırmaktadır.
+					İstanbul’da sanat ve kültür aktiviteleri ise sınırsızdır diyebiliriz.</value>
   </data>
   <data name="herkes" xml:space="preserve">
     <value>Herkes</value>

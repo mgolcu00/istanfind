@@ -2,6 +2,7 @@
 @inject LocService SharedLocalizer
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Localization
 
 @inject IOptions<RequestLocalizationOptions> LocOps
 
@@ -32,31 +33,32 @@
 @if (ViewData["Title"].ToString() == "İstanfind.")
 {
     <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
-
+        <div class="container-md d-flex align-items-center justify-content-between">
             <h1 class="logo"><a asp-controller="Home" asp-action="Index">İstanFind<span>.</span></a></h1>
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a asp-controller="Home" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("anasayfa")</a></li>
-                    <li class="active"><a href="#" onclick="ShowAbout(); return false;">@SharedLocalizer.GetLocalizedHtmlString("kesfet")</a></li>
-                    <li class="active"><a href="#" onclick="ShowTeam(); return false;">@SharedLocalizer.GetLocalizedHtmlString("takim")</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diller</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach (var culture in supportedCultures)
-                            {
+                    <li><a asp-controller="Home" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("anasayfa")</a></li>
+                    <li><a href="#" onclick="ShowAbout(); return false;">@SharedLocalizer.GetLocalizedHtmlString("kesfet")</a></li>
+                    <li><a href="#" onclick="ShowTeam(); return false;">@SharedLocalizer.GetLocalizedHtmlString("takim")</a></li>
+                    <li>
+                        @{
+                            var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+                            var cultureItems = LocOps.Value.SupportedUICultures
+                                .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+                                .ToList();
+                        }
 
-                                // replace {culture} value with the one from the list
-                                routeData["culture"] = culture.Value;
-
-                                <a class="dropdown-item small bg-dark bg-danger" asp-all-route-data="@routeData">
-                                    @culture.Text
-                                </a>
-
-                            }
-                            @*<a class="dropdown-item bg-dark" asp-all-route-data="@routeData">TR</a>
-                                <a class="dropdown-item bg-dark" asp-all-route-data="@routeData">EN</a>*@
+                        <div title="@requestCulture?.Provider?.GetType().Name">
+                            <form id="selectLanguage" asp-controller="Home"
+                                  asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
+                                  method="post" class="form-horizontal" role="form">
+                                <div class="form-row">
+                                    <select class="" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
+                                    <button type="submit" class="get-started-btn btn-dark">Kaydet</button>
+                                </div>
+                            </form>
                         </div>
+
                     </li>
                 </ul>
             </nav><!-- .nav-menu -->
@@ -72,39 +74,39 @@
 else
 {
     <header id="headerBlack">
-        <div class="container d-flex align-items-center justify-content-between">
-
+        <div class="container-md d-flex align-items-center justify-content-between">
             <h1 class="logo"><a asp-controller="Home" asp-action="Index">İstanFind<span>.</span></a></h1>
-
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a asp-controller="Home" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("anasayfa")</a></li>
-                    <li class="active"><a href="#" onclick="ShowAbout(); return false;">@SharedLocalizer.GetLocalizedHtmlString("kesfet")</a></li>
-                    <li class="active"><a href="#" onclick="ShowTeam(); return false;">@SharedLocalizer.GetLocalizedHtmlString("takim")</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diller</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach (var culture in supportedCultures)
-                            {
+                    <li><a asp-controller="Home" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("anasayfa")</a></li>
+                    <li><a href="#" onclick="ShowAbout(); return false;">@SharedLocalizer.GetLocalizedHtmlString("kesfet")</a></li>
+                    <li><a href="#" onclick="ShowTeam(); return false;">@SharedLocalizer.GetLocalizedHtmlString("takim")</a></li>
+                    <li>
+                        @{
+                            var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+                            var cultureItems = LocOps.Value.SupportedUICultures
+                                .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+                                .ToList();
+                        }
 
-                                // replace {culture} value with the one from the list
-                                routeData["culture"] = culture.Value;
-
-                                <a class="dropdown-item small bg-dark bg-danger" asp-all-route-data="@routeData">
-                                    @culture.Text
-                                </a>
-
-                            }
-                            @*<a class="dropdown-item bg-dark" asp-all-route-data="@routeData">TR</a>
-                                <a class="dropdown-item bg-dark" asp-all-route-data="@routeData">EN</a>*@
+                        <div title="@requestCulture?.Provider?.GetType().Name">
+                            <form id="selectLanguage" asp-controller="Home"
+                                  asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
+                                  method="post" class="form-horizontal" role="form">
+                                <div class="form-row">
+                                    <select class="" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
+                                    <button type="submit" class="get-started-btn btn-dark">Kaydet</button>
+                                </div>
+                            </form>
                         </div>
+
                     </li>
                 </ul>
             </nav><!-- .nav-menu -->
             <nav class="nav-menu d-none d-lg-block">
 
-                <partial name="_LoginPartial" />
 
+                <partial name="_LoginPartial" />
             </nav>
         </div>
     </header><!-- End Header -->

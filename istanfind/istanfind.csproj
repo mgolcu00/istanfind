@@ -10,6 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20210103115355_temporary.cs" />
+    <Compile Remove="Data\Migrations\20210103115355_temporary.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.10" />
@@ -22,16 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\hotel\" />
-    <Folder Include="wwwroot\images\historicalplace\" />
-    <Folder Include="wwwroot\images\funplace\" />
-    <Folder Include="wwwroot\images\shop\" />
-    <Folder Include="wwwroot\images\restaurant\" />
-    <Folder Include="wwwroot\images\park\" />
+    <None Include="Views\ManageUsers\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\ManageUsers\Index.cshtml" />
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>
