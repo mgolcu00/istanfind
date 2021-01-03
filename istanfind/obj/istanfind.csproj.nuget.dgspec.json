@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\istanfind.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\istanfind.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\istanfind.csproj",
+        "projectName": "istanfind",
+        "projectPath": "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\istanfind.csproj",
+        "packagesPath": "C:\\Users\\mertg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\obj\\",
+=======
     "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj",
         "packagesPath": "C:\\Users\\mertg\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\obj\\",
+>>>>>>> b08ecb12ce1059bab7d89d501fe3e165a9f8f9a9
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

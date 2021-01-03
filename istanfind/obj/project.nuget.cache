@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "qaZ3mLlso0T0ghpMwVXKvRmdDK8jx/uje0iMiB4ZMc8eqTWUS20/sXZ6IT5C0tlC1/eFhdTgEggFbv8lg1Sssg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mertg\\source\\web_2\\istanfind\\istanfind\\istanfind.csproj",
+=======
   "dgSpecHash": "kD1I2+f506DZFWqdBYfT2mqWo/PV65H9spWOyCjnNQ/OBdpj2Zl1zqPcF+iL1BalspeWacCZoPCJEClBUrFOqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj",
+>>>>>>> b08ecb12ce1059bab7d89d501fe3e165a9f8f9a9
   "expectedPackageFiles": [
     "C:\\Users\\mertg\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\mertg\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
