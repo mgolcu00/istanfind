@@ -9692,27 +9692,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mertg\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Gamze\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj",
+      "projectUniqueName": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind.csproj",
       "projectName": "istanfind",
-      "projectPath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\istanfind.csproj",
-      "packagesPath": "C:\\Users\\mertg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mertg\\source\\web_2\\new\\istanfind\\istanfind\\obj\\",
+      "projectPath": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind.csproj",
+      "packagesPath": "C:\\Users\\Gamze\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mertg\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Gamze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9792,7 +9789,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -100,7 +100,7 @@ namespace istanfind
         private static async Task EnsureTestAdminAsync(UserManager<User> userManager)
         {
             var testAdmin = await userManager.Users
-                .Where(x => x.UserName == "g181210059@sakarya.edu.tr")
+                .Where(x => x.UserName == "g181210110@sakarya.edu.tr")
                 .SingleOrDefaultAsync();
 
             if (testAdmin != null)
@@ -113,7 +113,7 @@ namespace istanfind
 
             }
             //buralar de?i?ecek
-            testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "g181210059@sakarya.edu.tr", Email = "g181210059@sakarya.edu.tr" };
+            testAdmin = new User { Ad = "Admin", Soyad = "Web", UserName = "g181210110@sakarya.edu.tr", Email = "g181210110@sakarya.edu.tr" };
             await userManager.CreateAsync(testAdmin, "123");
             var token = await userManager.GenerateEmailConfirmationTokenAsync(testAdmin);
             await userManager.ConfirmEmailAsync(testAdmin, token);
