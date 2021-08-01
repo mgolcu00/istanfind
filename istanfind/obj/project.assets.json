@@ -9692,23 +9692,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gamze\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\akiny\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind.csproj",
+      "projectUniqueName": "C:\\Users\\akiny\\Source\\Repos\\istanfind\\istanfind\\istanfind.csproj",
       "projectName": "istanfind",
-      "projectPath": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\istanfind.csproj",
-      "packagesPath": "C:\\Users\\Gamze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gamze\\Desktop\\istanfind\\istanfind\\obj\\",
+      "projectPath": "C:\\Users\\akiny\\Source\\Repos\\istanfind\\istanfind\\istanfind.csproj",
+      "packagesPath": "C:\\Users\\akiny\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\akiny\\Source\\Repos\\istanfind\\istanfind\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Gamze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\akiny\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9789,7 +9785,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
